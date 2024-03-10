@@ -48,6 +48,7 @@ export const SingupView = () => {
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           required
+          placeholder="Enter a username"
         />
       </Form.Group>
       <Form.Group controlId="formBirthday">
@@ -57,6 +58,7 @@ export const SingupView = () => {
           value={birthday}
           onChange={(e) => setBirthday(e.target.value)}
           required
+          placeholder="Enter birthday"
         />
       </Form.Group>
       <br />
@@ -67,6 +69,7 @@ export const SingupView = () => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
+          placeholder="Enter your email address"
         />
       </Form.Group>
       <br />
@@ -78,6 +81,7 @@ export const SingupView = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
+          placeholder="Your password must be 8 or more characters"
         />
       </Form.Group>
       <br />

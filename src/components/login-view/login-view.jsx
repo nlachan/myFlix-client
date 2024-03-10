@@ -1,5 +1,8 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { useState } from "react";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 
 export const LoginView = ({ onLoggedIn }) => {
   const [username, setUsername] = useState("");
@@ -61,7 +64,9 @@ export const LoginView = ({ onLoggedIn }) => {
         />
       </Form.Group>
       <br />
-      <Button type="submit">Login</Button>
+      <Button type="submit" className="mt-2">
+        Submit
+      </Button>
     </Form>
   );
 };
