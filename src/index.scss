@@ -1,5 +1,5 @@
-$color: steelblue;
+$primary: rgb(19, 26, 216);
+$body-bg: rgb(218, 18, 174);
+$secondary: rgb(239, 238, 245);
 
-$primary: rgb(69, 71, 139);
-$body-bg: rgb(241, 241, 248);
-$secondary: rgb(151, 148, 190);
+@import "~bootstrap/scss/bootstrap.scss";
