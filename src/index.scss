@@ -1,5 +1,50 @@
-$primary: rgb(19, 26, 216);
-$body-bg: rgb(218, 18, 174);
-$secondary: rgb(239, 238, 245);
+$gray-400: #6f6f6f;
+$border-radius: 5px;
+$white: #ffffff;
+$spacer: 10px;
+$input-padding-y: 8px;
+$input-padding-x: 12px;
+$input-border-width: 1px;
+$primary: #6f2f2f;
+$success: #28a745;
+$btn-padding-y: 10px;
+$btn-padding-x: 20px;
+$body-bg: #42474c;
 
 @import "~bootstrap/scss/bootstrap.scss";
+
+.movieCard {
+  a {
+    text-decoration: none;
+  }
+
+  .card-title {
+    color: black;
+    font-weight: bolder;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  /* Styles for smaller screens */
+  .btn {
+    font-size: x-small;
+    --bs-btn-padding-y: 5px;
+    --bs-btn-padding-x: 5px;
+  }
+
+  .card-body {
+    font-size: small;
+  }
+
+  .h5 {
+    font-size: small;
+  }
+
+  .loginForm {
+    max-width: 100%;
+  }
+
+  .signupForm {
+    max-width: 100%;
+  }
+}
