@@ -65,8 +65,12 @@ export const LoginView = ({ onLoggedIn }) => {
       </Form.Group>
       <br />
       <Button type="submit" className="mt-2">
-        Submit
+        Login
       </Button>
     </Form>
   );
+};
+
+LoginView.propTypes = {
+  onLoggedIn: PropTypes.func.isRequired,
 };
