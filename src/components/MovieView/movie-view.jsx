@@ -1,68 +1,25 @@
-import React from "react";
-import PropTypes from "prop-types";
+import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
-import { MovieCard } from "../movie-card/movie-card";
-
-import Button from "react-bootstrap/Button";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import "./movie-view.scss";
 
 export const MovieView = ({ movies }) => {
   const { movieId } = useParams();
-
-  const movie = movies.find((m) => m.id === movieId);
-
-  // Find similar movies based on genre
-  const similarMovies = movies.filter((m) => {
-    return (
-      m.id !== movie.id && m.genre.some((genre) => movie.genre.includes(genre))
-    );
-  });
+  const movie = movies.find((m) => m._id === movieId);
 
   return (
-    <div>
-      <div>
-        <img height={300} src={movie.image} />
-      </div>
-      <div>
-        <h4>{movie.title}</h4>
-      </div>
-      <div>
-        <p>{movie.description}</p>
-      </div>
-      <div>
-        <h6>Genre: {movie.genre.join(", ")}</h6>
-      </div>
-      <div>
-        <h6>Director: {movie.director}</h6>
-      </div>
-
-      <Link to={"/"}>
-        <button className="back-button">Back</button>
-      </Link>
-
-      <Col className="mb-5">
-        <hr />
-        <h3 className="title"> Similar movies </h3>
-        <Row>
-          {similarMovies.map((movie) => (
-            <Col key={movie.id} xs={6} sm={6} md={6}>
-              <MovieCard movie={movie} />
-            </Col>
-          ))}
-        </Row>
-      </Col>
-    </div>
+    <Card className="movieView">
+      <Card.Img variant="top" src={movie.ImagePath} />
+      <Card.Body>
+        <Card.Title>{movie.Title}</Card.Title>
+        <Card.Text>{movie.Director.Name}</Card.Text>
+        <Card.Text>{movie.Genre.Name}</Card.Text>
+        <Card.Text>{movie.Description}</Card.Text>
+        <Link to={`/`}>
+          <Button className="button">Back</Button>
+        </Link>
+      </Card.Body>
+    </Card>
   );
-};
-
-MovieView.propTypes = {
-  movies: PropTypes.shape({
-    title: PropTypes.string,
-    description: PropTypes.string,
-    genre: PropTypes.string,
-    director: PropTypes.string,
-  }).isRequired,
 };

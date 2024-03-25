@@ -1,19 +1,21 @@
-.link-card {
-  margin-bottom: 15px;
-  figure {
-    position: relative;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    Button {
-      display: block;
-      margin: auto;
-    }
-  }
+.movieCard {
+  box-shadow: 1em 1em 2em 0.25em #000000;
+  border-radius: 0.5em;
 }
 
-.img {
-  height: 300px;
-  margin: auto;
-  padding: 20px;
+.movieCard.card {
+  background-color: white;
+}
+
+.favoriteButtonContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.favoriteButton {
+  width: 100%;
 }

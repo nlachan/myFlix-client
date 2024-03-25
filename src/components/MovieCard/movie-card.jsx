@@ -127,11 +127,19 @@ export const MovieCard = ({ movie, isFavorite }) => {
 };
 
 MovieCard.propTypes = {
-  isFavorite: PropTypes.bool.isRequired,
   movie: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
-    genre: PropTypes.string.isRequired,
-    id: PropTypes.string.isRequired,
+    _id: PropTypes.string.isRequired,
+    Title: PropTypes.string.isRequired,
+    Description: PropTypes.string.isRequired,
+    ImagePath: PropTypes.string.isRequired,
+    Director: PropTypes.shape({
+      Name: PropTypes.string.isRequired,
+    }).isRequired,
   }).isRequired,
+  user: PropTypes.shape({
+    username: PropTypes.string.isRequired,
+    favoriteMovies: PropTypes.arrayOf(PropTypes.string).isRequired,
+  }),
+  token: PropTypes.string.isRequired,
+  onToggleFavorite: PropTypes.func.isRequired, // Prop for toggling favorite status
 };
