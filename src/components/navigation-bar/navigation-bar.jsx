@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import Logo from "../../img/51928_movie_icon.png";
 import { SearchBar } from "../search-bar/search-bar";
 import { Container, Navbar, Nav, Form, Row, Col } from "react-bootstrap";
 import { Routes, Route } from "react-router-dom";
