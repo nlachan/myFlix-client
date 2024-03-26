@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 import { FavoriteMovies } from "./favorite-movies";
 import { UpdateUser } from "./update-user";
 import { Card, Button, Image } from "react-bootstrap";
-import Profile_img from "../../img/Profile icon.png";
 import "./profile-view.scss";
 
 export const ProfileView = ({ token, user, movies, onSubmit }) => {
