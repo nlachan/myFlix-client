@@ -4,7 +4,7 @@ import Form from "react-bootstrap/Form";
 import Image from "react-bootstrap/Image";
 import "./signup-view.scss";
 
-export const SingupView = () => {
+export const SignupView = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
