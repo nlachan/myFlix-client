@@ -82,8 +82,18 @@ export const MainView = () => {
       <Row className="justify-content-center">
         <Routes>
           <Route
-            path="/users"
-            element={<>{user ? <Navigate to="/" /> : <Col md={4}></Col>}</>}
+            path="/signup"
+            element={
+              <>
+                {user ? (
+                  <Navigate to="/" />
+                ) : (
+                  <Col className="col-xl-3 col-lg-4 col-md-5 col-sm-6">
+                    <SignupView />
+                  </Col>
+                )}
+              </>
+            }
           />
           <Route
             path="/login"
@@ -92,7 +102,7 @@ export const MainView = () => {
                 {user ? (
                   <Navigate to="/" />
                 ) : (
-                  <Col md={4}>
+                  <Col className="col-xl-3 col-lg-4 col-md-5 col-sm-6">
                     <LoginView
                       onLoggedIn={(user, token) => {
                         setUser(user);
