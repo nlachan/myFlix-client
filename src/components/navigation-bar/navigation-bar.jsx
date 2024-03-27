@@ -7,15 +7,16 @@ import { Routes, Route } from "react-router-dom";
 
 export const NavigationBar = ({ user, loggedOut }) => {
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar expand="lg" className="bg-primary" data-bs-theme="dark" fixed="top">
       <Container>
         <Navbar.Brand as={Link} to="/">
-          <Image className="Logo" src={Logo} fluid style={{ width: "75px" }} />
+          <span className="h5">MYFLIX</span>
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
+        <Navbar.Toggle aria-controls="navbarResponsive" />
+        <Navbar.Collapse id="navbarResponsive">
           <Nav className="me-auto">
-            {!user && (
+            {user === null ? (
+              // Show login and signup links if there's no user
               <>
                 <Nav.Link as={Link} to="/login">
                   Login
@@ -24,19 +25,27 @@ export const NavigationBar = ({ user, loggedOut }) => {
                   Signup
                 </Nav.Link>
               </>
-            )}
-            {user && (
+            ) : (
+              // Show home and logout links if there's a user
               <>
-                <Nav.Link as={Link} to="/">
+                <Nav.Link as={Link} to="/movies">
                   Home
                 </Nav.Link>
-                <Nav.Link as={Link} to={`/profile/${user.username}`}>
+                <Nav.Link as={Link} to="/profile">
                   Profile
                 </Nav.Link>
-                <Nav.Link onClick={loggedOut}>Logout</Nav.Link>
               </>
             )}
           </Nav>
+          {user !== null && (
+            <Nav>
+              <Nav.Link
+                onClick={() => dispatch(clearUser())}
+                className="ms-auto text-warning">
+                Logout
+              </Nav.Link>
+            </Nav>
+          )}
         </Navbar.Collapse>
       </Container>
     </Navbar>
